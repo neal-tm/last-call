@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Hud" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+
+[node name="TipsLabel" type="Label" parent="Root/Hud"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "$0"
+
+[node name="ClockLabel" type="Label" parent="Root/Hud"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "8:00 PM"
+horizontal_alignment = 1
+
+[node name="WalkoutsLabel" type="Label" parent="Root/Hud"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Walkouts 0/3"
+horizontal_alignment = 2
+
+[node name="BannerLabel" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "The rush is on"
+horizontal_alignment = 1
+
+[node name="SeatsRow" type="HBoxContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="ToastLabel" type="Label" parent="Root"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="HandLabel" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "In hand: empty-handed"
+
+[node name="PrepBar" type="ProgressBar" parent="Root"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+show_percentage = false
+
+[node name="DrinksRow" type="HBoxContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="IceRow" type="HBoxContainer" parent="Root"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="IceTag" type="Label" parent="Root/IceRow"]
+layout_mode = 2
+text = "Ice"
+
+[node name="IceBar" type="ProgressBar" parent="Root/IceRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+show_percentage = false
+
+[node name="IceButton" type="Button" parent="Root/IceRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Restock ice"
+
+[node name="StartPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Middle" type="CenterContainer" parent="StartPanel"]
+layout_mode = 2
+
+[node name="Card" type="VBoxContainer" parent="StartPanel/Middle"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ResultLabel" type="Label" parent="StartPanel/Middle/Card"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LAST CALL
+
+Tap a customer to take the order.
+Make the drink below.
+Tap them again to serve, once more to collect.
+Tap an empty glass to clear the seat.
+
+Three walkouts and you are sent home."
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="StartPanel/Middle/Card"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 52)
+layout_mode = 2
+text = "Open the bar"
